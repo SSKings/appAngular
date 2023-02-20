@@ -1,0 +1,52 @@
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar color="primary">
+      Gerenciamento de Clientes
+    </mat-toolbar>
+    <table mat-table [dataSource]="clients" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id</th>
+        <td mat-cell *matCellDef="let clients"> {{clients.id}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let clients"> {{clients.nome}} </td>
+      </ng-container>
+
+       <!-- Name Column -->
+       <ng-container matColumnDef="dataNasc">
+        <th mat-header-cell *matHeaderCellDef> Nascimento </th>
+        <td mat-cell *matCellDef="let clients"> {{clients.dataNasc}} </td>
+      </ng-container>
+
+       <!-- Name Column -->
+       <ng-container matColumnDef="end">
+        <th mat-header-cell *matHeaderCellDef> Endereço </th>
+        <td mat-cell *matCellDef="let clients"> {{clients.end}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="telefone">
+        <th mat-header-cell *matHeaderCellDef> Tel </th>
+        <td mat-cell *matCellDef="let clients"> {{clients.telefone}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> E-mail </th>
+        <td mat-cell *matCellDef="let clients"> {{clients.email}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </mat-card-content>
+</mat-card>
