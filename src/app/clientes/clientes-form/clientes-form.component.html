@@ -1,0 +1,32 @@
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar class="min-width" color="primary">
+      CADASTRO DE CLIENTES
+    </mat-toolbar>
+    <form [formGroup] = "form"> <!--associando formulario com atributo form:FormGroup-->
+      <mat-form-field class="min-width">
+      <input matInput placeholder="Nome" formControlName="nome">
+      </mat-form-field>
+
+      <mat-form-field class="min-width">
+      <input matInput placeholder="Data de Nascimento" formControlName="dataNasc">
+      </mat-form-field>
+
+      <mat-form-field class="min-width">
+      <input matInput placeholder="Endereço" formControlName="end">
+      </mat-form-field>
+
+      <mat-form-field class="min-width">
+      <input matInput placeholder="Cel" formControlName="cel">
+      </mat-form-field>
+
+      <mat-form-field class="min-width">
+      <input matInput placeholder="E-mail" formControlName="email">
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+</mat-card>

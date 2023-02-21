@@ -8,14 +8,19 @@ import { Cliente } from 'src/app/clientes/models/cliente';
 })
 export class ClientesService {
 
+  private readonly API = 'http://localhost:8080/clientes';
 
   constructor(private http: HttpClient) {
 
    }
 
    listar() {
-      return this.http.get<Cliente[]>('http://localhost:8080/clientes').pipe(
+      return this.http.get<Cliente[]>(this.API).pipe(
         first()
       );
+   }
+
+   salvar(cliente : Cliente) {
+     this.http.post<Cliente>(this.API, cliente);
    }
 }
